@@ -2,37 +2,76 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
+const restaurants =
+  [
+    {
+      name: 'React Cafe',
+      adress: '123 AnyWhere St'
+    },
+    {
+      name: 'Fancy Restaurant',
+      adress: '799 Main St'
+    },
+    {
+      name: 'Taco Place',
+      adress: '550 maple Rd'
+    }
+  ]
 export default class App extends Component {
+
+
   render() {
     return (
-      <View>
+      <View style={styles.main}>
         <Text style={styles.header}
         >
           Restaurant Review
         </Text>
 
-        <Text style={styles.name}>
-          React Cafe
-        </Text>
+        {
+          restaurants.map((restaurant, index) => {
+            return (
 
-        <Text style={styles.adress}>
-          123 AnyWhere St
-        </Text>
+              <View key={restaurant.name} style={styles.restaurants}>
+                <View style={styles.index}>
 
-        <Text style={styles.name}>
-          Fancy Restaurant
-        </Text>
+                  <Text>
+                    {index + 1}
+                  </Text>
+                </View>
 
-        <Text style={styles.adress}>
-          799 Main St
-        </Text>
+                <View style={styles.restaurantInfo}>
 
+                  <Text style={styles.name}>
+                    {restaurant.name}
+                  </Text>
+
+                  <Text style={styles.adress}>
+                    {restaurant.adress}
+                  </Text>
+                </View>
+
+                <View style={styles.info}>
+                  <Text>
+                    Info
+              </Text>
+                </View>
+              </View>
+            )
+          })
+        }
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  main: {
+    flex: 1
+  },
+  restaurants: {
+    flexDirection: 'row'
+  },
   header: {
     padding: 40,
     fontSize: 30,
@@ -43,11 +82,23 @@ const styles = StyleSheet.create({
   name: {
     color: 'black',
     fontSize: 20
-
   },
   adress: {
     color: 'grey',
-    paddingLeft: 10
+  },
+  restaurantInfo: {
+    flexDirection: 'column',
+    flex: 8
+  },
+  info: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  index: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center'
   }
 })
 
