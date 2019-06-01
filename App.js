@@ -1,29 +1,22 @@
-
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
+import AppStyles from './AppStyles.js';
 
-const restaurants =
-  [
-    {
-      name: 'React Cafe',
-      adress: '123 AnyWhere St'
-    },
-    {
-      name: 'Fancy Restaurant',
-      adress: '799 Main St'
-    },
-    {
-      name: 'Taco Place',
-      adress: '550 maple Rd'
-    }
-  ]
+const restaurants = [
+  { name: 'React Cafe', adress: '123 AnyWhere St' },
+  {
+    name: 'Fancy Restaurant', adress: '799 Main St'
+  },
+  {
+    name: 'Taco Place', adress: '550 maple Rd'
+  }
+]
 export default class App extends Component {
-
 
   render() {
     return (
-      <View style={styles.main}>
-        <Text style={styles.header}
+      <View style={AppStyles.main}>
+        <Text style={AppStyles.header}
         >
           Restaurant Review
         </Text>
@@ -32,26 +25,27 @@ export default class App extends Component {
           restaurants.map((restaurant, index) => {
             return (
 
-              <View key={restaurant.name} style={styles.restaurants}>
-                <View style={styles.index}>
+              <View key={restaurant.name} style={[AppStyles.row,
+              { backgroundColor: index % 2 === 0 ? 'white' : '#F3F3F7' }]}>
+                <View style={AppStyles.egds}>
 
                   <Text>
                     {index + 1}
                   </Text>
                 </View>
 
-                <View style={styles.restaurantInfo}>
+                <View style={AppStyles.nameAdress}>
 
-                  <Text style={styles.name}>
+                  <Text style={AppStyles.name}>
                     {restaurant.name}
                   </Text>
 
-                  <Text style={styles.adress}>
+                  <Text style={AppStyles.adressText}>
                     {restaurant.adress}
                   </Text>
                 </View>
 
-                <View style={styles.info}>
+                <View style={AppStyles.egds}>
                   <Text>
                     Info
               </Text>
@@ -65,40 +59,5 @@ export default class App extends Component {
   }
 }
 
-const styles = StyleSheet.create({
-  main: {
-    flex: 1
-  },
-  restaurants: {
-    flexDirection: 'row'
-  },
-  header: {
-    padding: 40,
-    fontSize: 30,
-    textAlign: 'center',
-    color: '#0066CC',
-    fontWeight: '300'
-  },
-  name: {
-    color: 'black',
-    fontSize: 20
-  },
-  adress: {
-    color: 'grey',
-  },
-  restaurantInfo: {
-    flexDirection: 'column',
-    flex: 8
-  },
-  info: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  index: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
-  }
-})
+
 
