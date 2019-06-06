@@ -16,7 +16,7 @@ export default class Restaurants extends Component {
     state = {
         search: null
     }
-
+    
     render() {
         return (
             <View>
