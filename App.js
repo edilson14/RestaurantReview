@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Platform } from 'react-native';
+import { Text, View, Platform, ScrollView } from 'react-native';
 import AppStyles from 'styles/AppStyles';
 import Restaurants from 'components/Restaurants'
 
