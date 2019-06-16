@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, TextInput } from 'react-native';
-import AppStyles from './AppStyles';
+import AppStyles from 'styles/AppStyles';
 
 const restaurants = [
     { name: 'React Cafe', adress: '123 AnyWhere St' },

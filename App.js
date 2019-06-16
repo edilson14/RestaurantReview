@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, Platform } from 'react-native';
-import AppStyles from './AppStyles';
-import Restaurants from './Restaurants'
+import AppStyles from 'styles/AppStyles';
+import Restaurants from 'components/Restaurants'
 
 
 export default class App extends Component {
