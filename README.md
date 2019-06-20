@@ -1,11 +1,10 @@
 # RestaurantReview
-App from EggHead Course to learn basic about React-Native 
+App from EggHead Course to learn basic about React-Native
 
 #Install dependencies
   $ npm i
  
-#Run android 
+#Run android
   $ react-native run-android
- 
- #Run IOS
+#Run IOS
   $ react-native run-ios
