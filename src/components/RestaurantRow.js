@@ -1,8 +1,15 @@
 import React, { Component } from 'react'
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity, TouchableHighlight, TouchableWithoutFeedback } from 'react-native'
 import AppStyles from 'styles/AppStyles'
 
 export default class RestaurantRow extends Component {
+  state = {
+    showInfo: false
+  }
+  onPressInfo = () => {
+    this.setState({ showInfo: !this.state.showInfo })
+  }
+
   render () {
     const { restaurant, index } = this.props
     return (
@@ -16,8 +23,16 @@ export default class RestaurantRow extends Component {
         </View>
 
         <View style={AppStyles.egds}>
-          <Text>Info</Text>
+          <TouchableHighlight onPress={this.onPressInfo} style={AppStyles.button} underlayColor='#5398DC'>
+            <Text style={AppStyles.buttonText}>Info</Text>
+          </TouchableHighlight>
         </View>
+
+        {this.state.showInfo && (
+          <View>
+            <Text style={AppStyles.info}>Restaurant Info</Text>
+          </View>
+        )}
       </View>
     )
   }
