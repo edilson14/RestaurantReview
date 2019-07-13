@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
-import { View, TextInput, FlatList } from 'react-native'
-import RestaurantRow from 'components/RestaurantRow'
-import AppStyles from 'styles/AppStyles'
+import React, { Component } from 'react';
+import { View, TextInput, FlatList, Image } from 'react-native';
+import RestaurantRow from 'components/RestaurantRow';
+import AppStyles from 'styles/AppStyles';
+
 
 const restaurants = [
   { name: 'React Cafe', adress: '123 AnyWhere St' },
@@ -31,7 +32,7 @@ export default class Restaurants extends Component {
     search: null
   }
 
-  render () {
+  render() {
     return (
       <View>
         <TextInput

@@ -74,5 +74,9 @@ export default StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     borderRadius: 4
+  },
+  image: {
+    marginTop: 30,
+    alignItems: 'center'
   }
 })
