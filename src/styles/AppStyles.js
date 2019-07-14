@@ -45,6 +45,15 @@ export default StyleSheet.create({
     minWidth: 50,
     borderRadius: 50
   },
+  stars:{
+    flex: 1,
+    alignItems: 'center',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    padding:5,
+    minWidth: 50,
+    color:'#FFD64C'
+  },
   input: {
     padding: 10,
     paddingHorizontal: 20,
