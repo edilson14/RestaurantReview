@@ -30,12 +30,8 @@ export default StyleSheet.create({
   },
   nameAdress: {
     flexDirection: 'column',
-    flex: 8
-  },
-  info: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 8,
+    padding: 5
   },
   egds: {
     flex: 1,
@@ -45,14 +41,14 @@ export default StyleSheet.create({
     minWidth: 50,
     borderRadius: 50
   },
-  stars:{
+  stars: {
     flex: 1,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    padding:5,
+    padding: 5,
     minWidth: 50,
-    color:'#FFD64C'
+    color: '#FFD64C'
   },
   input: {
     padding: 10,
