@@ -1,32 +1,17 @@
 import React, { Component } from 'react';
-import { Text, View, Platform, Image } from 'react-native';
-import AppStyles from 'styles/AppStyles';
-import Restaurants from 'components/Restaurants';
-import PizzaImages from 'images/pizza.png';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+
+import RestaurantList from 'components/RestaurantList';
+import RestaurantInfo from 'components/RestaurantInfo'
+
+const AppContainer = createStackNavigator({
+  Home: { screen: RestaurantList },
+  Info: { screen: RestaurantInfo }
+})
+
+export default createAppContainer(AppContainer);
 
 
-export default class App extends Component {
-  render() {
-    const headerStyle = Platform.select({
-      ios: AppStyles.header,
-      android: AppStyles.androidHeader
-    })
-
-    return (
-      <View style={AppStyles.main}>
-        <View style={AppStyles.image}>
-
-          <Image source={PizzaImages} />
-        </View>
-        <Text style={headerStyle}
-        >
-          Restaurant Review
-        </Text>
-        <Restaurants />
-      </View>
-    );
-  }
-}
 
 
 

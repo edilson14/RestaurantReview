@@ -1,14 +1,16 @@
 import React, { Component } from 'react'
 import { View, Text, Image, TouchableHighlight } from 'react-native';
+import { withNavigation } from 'react-navigation';
+
 import AppStyles from 'styles/AppStyles';
 import Stars from 'components/Stars'
 
-export default class RestaurantRow extends Component {
+class RestaurantRow extends Component {
   state = {
     showInfo: false
   }
   onPressInfo = () => {
-    this.setState({ showInfo: !this.state.showInfo })
+    this.props.navigation.navigate('Info');
   }
 
   render() {
@@ -53,3 +55,5 @@ export default class RestaurantRow extends Component {
     )
   }
 }
+
+export default withNavigation(RestaurantRow);

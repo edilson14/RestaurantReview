@@ -32,7 +32,7 @@ export default class Restaurants extends Component {
             this.state.restaurants.filter(restaurant => {
               return !this.state.search || restaurant.name.toLowerCase().indexOf(this.state.search.toLowerCase()) > -1
             })}
-          renderItem={({ item, index }) => <RestaurantRow restaurant={item} index={index} />}
+          renderItem={({ item, index }) => <RestaurantRow restaurant={item} index={index} navigation={this.props.navigation} />}
           keyExtractor={item => item.name}
           initialNumToRender={16}
         />
