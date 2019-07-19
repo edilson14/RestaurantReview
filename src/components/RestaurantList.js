@@ -6,6 +6,11 @@ import PizzaImages from 'images/pizza.png';
 
 
 export default class RestaurantList extends Component {
+
+    static navigationOptions = {
+        header: null
+    }
+
     render() {
         const headerStyle = Platform.select({
             ios: AppStyles.header,
