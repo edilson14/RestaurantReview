@@ -18,10 +18,12 @@
     "@babel/core": "7.4.5",
     "@babel/runtime": "7.4.5",
     "babel-jest": "24.8.0",
+    "braces": "^3.0.2",
     "jest": "24.8.0",
+    "mem": "^5.1.1",
     "metro-react-native-babel-preset": "0.54.1",
     "react-test-renderer": "16.8.3",
-    "ws": ">3.3.1"
+    "ws": "^7.1.1"
   },
   "jest": {
     "preset": "react-native"
