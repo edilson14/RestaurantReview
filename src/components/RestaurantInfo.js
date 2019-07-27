@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, ScrollView, Image, StyleSheet } from 'react-native';
+import { View, Text, ScrollView, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import RestaurnatInfoStyles from 'styles/RestaurnatInfoStyles'
+import AppStyles from 'styles/AppStyles';
 import Stars from 'components/Stars'
 
 
@@ -8,6 +9,9 @@ export default class RestaurantInfo extends Component {
 
     static navigationOptions = {
         title: 'Restaurant Info'
+    }
+    addReview = () => {
+        this.props.navigation.navigate("AddReview");
     }
     render() {
         const restaurant = this.props.navigation.getParam('restaurant');
@@ -27,6 +31,12 @@ export default class RestaurantInfo extends Component {
                         <Text style={RestaurnatInfoStyles.name}>{restaurant.name}</Text>
                         <Text >{restaurant.address}</Text>
                         <Stars rating={restaurant.rating} />
+                        <TouchableOpacity
+                            style={AppStyles.button}
+                            onPress={this.addReview}
+                        >
+                            <Text style={AppStyles.buttonText}>Add Review</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
             </ScrollView>

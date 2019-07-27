@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import RestaurantList from 'components/RestaurantList';
 import RestaurantInfo from 'components/RestaurantInfo'
 import About from 'components/About'
+import AddReview from 'components/AddReview';
 
 const AppContainer = createStackNavigator({
   Home: { screen: RestaurantList },
@@ -27,7 +28,8 @@ const AppContainer = createStackNavigator({
 const TabNavigator = createBottomTabNavigator({
   Restaurants: { screen: AppContainer },
   About: { screen: About }
-}, {
+},
+  {
     defaultNavigationOptions: ({ navigation }) => {
       return {
         tabBarIcon: ({ tintColor }) => {
@@ -48,12 +50,23 @@ const TabNavigator = createBottomTabNavigator({
         }
       }
     }
+  });
+
+const App = createStackNavigator({
+  Tabs: { screen: TabNavigator },
+  AddReview: { screen: AddReview }
+}, {
+    mode: 'modal',
+    headerMode: 'none'
+  }, {
+    defaultNavigationOptions: {
+      gestureEnabled: false //Remove close modal by gesture on IOS device's
+    }
   }
-);
+)
 
 
-
-export default createAppContainer(TabNavigator);
+export default createAppContainer(App);
 
 
 

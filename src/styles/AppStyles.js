@@ -61,6 +61,7 @@ export default StyleSheet.create({
     backgroundColor: '#f5f5f5'
   },
   button: {
+    marginTop: 10,
     borderWidth: 1,
     borderColor: '#0066CC',
     borderRadius: 14,
@@ -70,7 +71,8 @@ export default StyleSheet.create({
   },
   buttonText: {
     color: '#0066CC',
-    fontSize: 12
+    fontSize: 12,
+    textAlign: 'center'
   },
   info: {
     marginHorizontal: 40,
